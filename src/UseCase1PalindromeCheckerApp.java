@@ -27,16 +27,19 @@ public class UseCase1PalindromeCheckerApp {
     } else {
         System.out.println(input + " is NOT a Palindrome");
     }
-    //USE CASE 3
-    String input = "madam";
-    String reversed = "";
+   // USE CASE 3 (Reverse string and compare)
+        String input3 = "madam";
+        StringBuilder reversedBuilder = new StringBuilder();
 
-        for (int i = input.length() - 1; i >= 0; i--) {
-        reversed += input.charAt(i);
-    }
+        for (int i = input3.length() - 1; i >= 0; i--) {
+            reversedBuilder.append(input3.charAt(i));
+        }
 
-        if (input.equals(reversed)) {
-        System.out.println(input + " is a palindrome");
-    } else {
-        System.out.println(input + " is not a palindrome");
+        String reversed = reversedBuilder.toString();
+
+        if (input3.equals(reversed)) {
+            System.out.println(input3 + " is a palindrome");
+        } else {
+            System.out.println(input3 + " is not a palindrome");
+        }
 }
