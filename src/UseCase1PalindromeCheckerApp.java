@@ -113,5 +113,27 @@ public class UseCase1PalindromeCheckerApp {
         } else {
             System.out.println(input6 + " is not a palindrome.");
         }
+        // USE CASE 7 (Using Deque)
+        String input7 = "civic";
+        Deque<Character> deque7 = new LinkedList<>();
+
+        for (char c : input7.toCharArray()) {
+            deque7.add(c);
+        }
+
+        boolean isPalindrome7 = true;
+
+        while (deque7.size() > 1) {
+            if (!deque7.removeFirst().equals(deque7.removeLast())) {
+                isPalindrome7 = false;
+                break;
+            }
+        }
+
+        if (isPalindrome7) {
+            System.out.println(input7 + " is a palindrome.");
+        } else {
+            System.out.println(input7 + " is not a palindrome.");
+        }
     }
 }
