@@ -1,3 +1,8 @@
+import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 public class UseCase1PalindromeCheckerApp {
     public static void main(String[] args) {
 
@@ -83,6 +88,30 @@ public class UseCase1PalindromeCheckerApp {
             System.out.println(input5 + " is a palindrome.");
         } else {
             System.out.println(input5 + " is not a palindrome.");
+        }
+        // USE CASE 6 (Using Queue + Stack)
+        String input6 = "civic";
+        Queue<Character> queue6 = new LinkedList<>();
+        Stack<Character> stack6 = new Stack<>();
+
+        for (char c : input6.toCharArray()) {
+            queue6.add(c);
+            stack6.push(c);
+        }
+
+        boolean isPalindrome6 = true;
+
+        while (!queue6.isEmpty()) {
+            if (!queue6.remove().equals(stack6.pop())) {
+                isPalindrome6 = false;
+                break;
+            }
+        }
+
+        if (isPalindrome6) {
+            System.out.println(input6 + " is a palindrome.");
+        } else {
+            System.out.println(input6 + " is not a palindrome.");
         }
     }
 }
