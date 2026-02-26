@@ -62,5 +62,27 @@ public class UseCase1PalindromeCheckerApp {
         } else {
             System.out.println(input4 + " is not a palindrome.");
         }
+        // USE CASE 5 (Using Stack only)
+        String input5 = "noon";
+        Stack<Character> stack5 = new Stack<>();
+
+        for (char c : input5.toCharArray()) {
+            stack5.push(c);
+        }
+
+        boolean isPalindrome5 = true;
+
+        for (char c : input5.toCharArray()) {
+            if (c != stack5.pop()) {
+                isPalindrome5 = false;
+                break;
+            }
+        }
+
+        if (isPalindrome5) {
+            System.out.println(input5 + " is a palindrome.");
+        } else {
+            System.out.println(input5 + " is not a palindrome.");
+        }
     }
 }
